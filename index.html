@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" href="data:," />
     <title>TCM Pattern Self-Assessment · 中医辨证分型自测 — Harmony TCM Wellness</title>
-    <meta name="description" content="A guided self-assessment based on Traditional Chinese Medicine pattern differentiation (bian zheng): a free 5-question quick check with an instant pattern result, plus a full 24-question assessment reviewed personally by a registered practitioner. For health education only — not a medical diagnosis." />
+    <meta name="description" content="A guided self-assessment based on Traditional Chinese Medicine pattern differentiation (bian zheng): a free 10-question quick check with an instant pattern result, plus a full 40-question assessment reviewed personally by a registered practitioner. For health education only — not a medical diagnosis." />
     <style>
       :root {
         color-scheme: light dark;
@@ -424,18 +424,18 @@
             <p class="lede">
               In Traditional Chinese Medicine, two people with the same complaint often need different
               treatment — because the underlying <em>pattern</em> differs. Start with the
-              <strong>free 5-question quick check</strong> for an instant first-glance pattern, shown right
-              here. Or take the <strong>full assessment</strong>: 24 questions plus your tongue photo and
+              <strong>free 10-question quick check</strong> for an instant first-glance pattern, shown right
+              here. Or take the <strong>full assessment</strong>: 40 questions plus your tongue photo and
               any imaging or lab results, analysed personally by our registered practitioner — your result
               is prepared by the expert and sent to you after payment, not generated on this page.
             </p>
             <div class="cta-row">
-              <button class="btn btn-primary" id="quickBtn" type="button">Free quick check — 5 questions 免费快速自测</button>
+              <button class="btn btn-primary" id="quickBtn" type="button">Free quick check — 10 questions 免费快速自测</button>
               <button class="btn btn-ghost" id="startBtn" type="button">Full assessment — expert review 完整评估</button>
               <a class="btn btn-ghost" href="#register">Register · Membership 注册会员</a>
               <a class="btn btn-ghost" href="#book">Book in person 预约线下 · First visit 10% off</a>
               <a class="btn btn-ghost" href="https://youweifeng.clinicsense.com/" target="_blank" rel="noopener">Book online 网上预约 →</a>
-              <span class="cta-note">Quick check result appears on this page · Full assessment: 24 questions, about 5 minutes, answers and files stay in this browser only</span>
+              <span class="cta-note">Quick check result appears on this page · Full assessment: 40 questions, about 8 minutes, answers and files stay in this browser only</span>
             </div>
           </div>
         </div>
@@ -579,7 +579,7 @@
             <p class="svc-kicker">Membership · 会员</p>
             <h3>Pattern membership</h3>
             <p class="price">$99 <span>per year</span></p>
-            <p class="desc">Four full professional pattern assessments per year — the complete 24-question assessment with tongue photo, analysed personally by the practitioner and emailed to you. Imaging and lab result analysis is <strong>not</strong> included in this plan (available separately at $45 per report set, or included in the plan beside this one).</p>
+            <p class="desc">Four full professional pattern assessments per year — the complete 40-question assessment with tongue photo, analysed personally by the practitioner and emailed to you. Imaging and lab result analysis is <strong>not</strong> included in this plan (available separately at $45 per report set, or included in the plan beside this one).</p>
             <p class="pay-link"><a href="#register" data-plan="membership99">Register for this plan 注册 →</a></p>
           </div>
           <div class="service-card">
@@ -703,7 +703,7 @@
         <div class="quiz-head">
           <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
           <div class="progress-meta">
-            <span id="progressLabel">Question 1 of 24</span>
+            <span id="progressLabel">Question 1 of 40</span>
             <span>Think of your usual state over the past month</span>
           </div>
         </div>
@@ -815,6 +815,9 @@
             like a formula prescribed properly for your constitution, book an in-person consultation.
             Acupuncture treatments at the clinic may be covered by extended health benefits, and direct billing
             is available.
+          </p>
+          <p>
+            Traditional Chinese Medicine is a regulated health profession in Ontario. For the regulator’s own introduction to TCM, see <a href="https://www.ctcmpao.on.ca/public/about-tcm/" target="_blank" rel="noopener">About Traditional Chinese Medicine — College of Traditional Chinese Medicine Practitioners and Acupuncturists of Ontario (CTCMPAO)</a>.
           </p>
           <p>
             Prefer to be seen in person? Harmony TCM Wellness runs <strong>two in-person clinics</strong>,
@@ -1132,6 +1135,135 @@
             { t: "Weak legs — my knees feel like they'll give way on stairs", s: { qi: 1, yang: 1 } },
             { t: "Restless legs at night, or hot palms and soles I stick out from under the covers", s: { yin: 2 } },
             { t: "None of these", s: {} }
+          ] },
+        { kicker: "Cough & Breathing 咳嗽呼吸", text: "Do you have a cough or breathing trouble?",
+          hint: "",
+          options: [
+            { t: "Dry cough with little phlegm, worse at night", s: { yin: 2 } },
+            { t: "Productive cough with lots of white phlegm", s: { damp: 2 } },
+            { t: "Cough and shortness of breath on exertion; talking tires me", s: { qi: 2 } },
+            { t: "No cough or breathing issues", s: {} }
+          ] },
+        { kicker: "Taste 口味", text: "How does food taste to you lately?",
+          hint: "",
+          options: [
+            { t: "Bitter taste, especially in the morning", s: { dampheat: 1, liverqi: 1 } },
+            { t: "Sweet, sticky taste; mouth feels coated", s: { damp: 2 } },
+            { t: "Little taste in food; everything tastes bland", s: { qi: 2 } },
+            { t: "Taste is normal", s: {} }
+          ] },
+        { kicker: "Immunity 免疫", text: "How often do you catch colds or infections?",
+          hint: "",
+          options: [
+            { t: "Easily — and I take a long time to recover", s: { qi: 2 } },
+            { t: "Frequent sinus congestion and mucus", s: { damp: 2 } },
+            { t: "Seasonal allergies that flare with pollen or dust", s: { qi: 1, damp: 1 } },
+            { t: "Rarely sick; I recover quickly", s: {} }
+          ] },
+        { kicker: "Abdomen 腹部", text: "How does your abdomen feel?",
+          hint: "",
+          options: [
+            { t: "Cold pain, eased by warmth and pressure", s: { yang: 2 } },
+            { t: "Distension that comes and goes with stress", s: { liverqi: 2 } },
+            { t: "Heavy, bloated feeling after meals", s: { damp: 2 } },
+            { t: "No abdominal complaints", s: {} }
+          ] },
+        { kicker: "Hair & Nails 毛发指甲", text: "What do you notice about your hair and nails?",
+          hint: "",
+          options: [
+            { t: "Hair thinning or falling; dry and brittle", s: { blood: 2 } },
+            { t: "Nails pale, ridged or breaking easily", s: { blood: 1, yin: 1 } },
+            { t: "Oily scalp with dandruff or itching", s: { dampheat: 2 } },
+            { t: "Hair and nails are healthy", s: {} }
+          ] },
+        { kicker: "Eyes 眼睛", text: "How are your eyes?",
+          hint: "",
+          options: [
+            { t: "Dry, gritty eyes, worse with screen use", s: { yin: 1, blood: 1 } },
+            { t: "Red, irritated eyes, worse with stress or late nights", s: { liverqi: 1, dampheat: 1 } },
+            { t: "Floaters or blurry vision", s: { blood: 2 } },
+            { t: "Eyes feel fine", s: {} }
+          ] },
+        { kicker: "Ears 耳朵", text: "How are your ears and hearing?",
+          hint: "",
+          options: [
+            { t: "High-pitched ringing in the ears", s: { yin: 2 } },
+            { t: "Hearing feels dulled, with occasional dizziness", s: { blood: 1, yang: 1 } },
+            { t: "Ears feel blocked, with mucus", s: { damp: 2 } },
+            { t: "No ear issues", s: {} }
+          ] },
+        { kicker: "Libido & Vitality 性欲精力", text: "How is your libido and lower-back vitality?",
+          hint: "",
+          options: [
+            { t: "Low libido with a cold lower back and knees", s: { yang: 2 } },
+            { t: "Low libido with soreness of the lower back and knees, plus night heat", s: { yin: 2 } },
+            { t: "Stress kills desire; I feel irritable and restless", s: { liverqi: 2 } },
+            { t: "Drive is normal", s: {} }
+          ] },
+        { kicker: "Edema 水肿", text: "Do you notice puffiness or swelling?",
+          hint: "",
+          options: [
+            { t: "Puffy face in the morning", s: { damp: 2 } },
+            { t: "Ankles swell by evening", s: { damp: 1, yang: 1 } },
+            { t: "Puffiness together with cold limbs", s: { yang: 2 } },
+            { t: "No puffiness", s: {} }
+          ] },
+        { kicker: "Afternoon 下午", text: "How are your afternoons?",
+          hint: "",
+          options: [
+            { t: "Afternoon slump — I need a nap to function", s: { qi: 2 } },
+            { t: "Afternoon heat: flushing and restlessness after 3 pm", s: { yin: 2 } },
+            { t: "Afternoon irritability, sometimes with a tension headache", s: { liverqi: 2 } },
+            { t: "Steady energy through the afternoon", s: {} }
+          ] },
+        { kicker: "Dreams 梦境", text: "How do you dream?",
+          hint: "",
+          options: [
+            { t: "Vivid dreams I remember clearly", s: { blood: 2 } },
+            { t: "Disturbing dreams; I wake with a start", s: { liverqi: 2 } },
+            { t: "Dream-filled sleep, but I wake unrefreshed", s: { yin: 1, blood: 1 } },
+            { t: "I sleep deeply and rarely dream", s: {} }
+          ] },
+        { kicker: "Exercise Response 运动后", text: "How does your body respond to exercise?",
+          hint: "",
+          options: [
+            { t: "Mild exercise leaves me drained for hours", s: { qi: 2 } },
+            { t: "Stiffness or fixed pain afterwards", s: { stasis: 2 } },
+            { t: "Heavy limbs and sweating with little effort", s: { damp: 2 } },
+            { t: "Exercise refreshes me", s: {} }
+          ] },
+        { kicker: "Seasons & Climate 气候", text: "Does weather affect how you feel?",
+          hint: "",
+          options: [
+            { t: "Worse in cold winter; I dread the cold", s: { yang: 2 } },
+            { t: "Worse in humid, rainy weather; head feels heavy", s: { damp: 2 } },
+            { t: "Worse in dry autumn; skin and throat dry out", s: { yin: 2 } },
+            { t: "Weather doesn't affect me much", s: {} }
+          ] },
+        { kicker: "Hands & Feet 手足", text: "How do your hands and feet feel?",
+          hint: "",
+          options: [
+            { t: "Numbness or tingling in fingers and toes", s: { blood: 2 } },
+            { t: "Cold hands and feet even indoors", s: { yang: 2 } },
+            { t: "Hot palms and soles at night", s: { yin: 2 } },
+            { t: "Fingers turn dusky purple in the cold", s: { stasis: 2 } },
+            { t: "Hands and feet feel normal", s: {} }
+          ] },
+        { kicker: "Alcohol & Rich Food 酒食", text: "How do you react to alcohol or rich food?",
+          hint: "",
+          options: [
+            { t: "Face flushes after even a little alcohol", s: { dampheat: 2 } },
+            { t: "Rich, greasy food leaves me bloated and nauseous", s: { damp: 2 } },
+            { t: "Spicy food triggers heartburn or skin flare-ups", s: { dampheat: 1, liverqi: 1 } },
+            { t: "No particular reaction", s: {} }
+          ] },
+        { kicker: "Stress Response 压力反应", text: "When you are under stress, what happens in your body?",
+          hint: "",
+          options: [
+            { t: "Headaches and a tight chest", s: { liverqi: 2 } },
+            { t: "Stomach churns; bowels loosen", s: { qi: 1, liverqi: 1 } },
+            { t: "I eat more and feel heavy and sluggish", s: { damp: 2 } },
+            { t: "Stress doesn't change my body much", s: {} }
           ] }
       ];
 
@@ -1176,6 +1308,48 @@
             { t: "Purple or dark tongue, or purple spots on it", s: { stasis: 2 } },
             { t: "Thick, greasy coating — white or yellow", s: { damp: 1, dampheat: 1 } },
             { t: "Pink tongue with a thin white coating (normal)", s: {} }
+          ] },
+        { kicker: "Sweating 出汗", text: "How do you sweat?",
+          hint: "",
+          options: [
+            { t: "Easily, with mild exertion — sometimes even without activity", s: { qi: 2 } },
+            { t: "Night sweats that wake me up", s: { yin: 2 } },
+            { t: "Sweat feels sticky; my skin often feels greasy", s: { damp: 1, dampheat: 1 } },
+            { t: "Nothing unusual", s: {} }
+          ] },
+        { kicker: "Pain 疼痛", text: "If you have recurring pain, what is it like?",
+          hint: "Choose the closest match — or the last option if pain isn't an issue.",
+          options: [
+            { t: "Fixed and stabbing, in one spot I can point to", s: { stasis: 2 } },
+            { t: "Distending or pressure-like; it moves around (ribs, chest, abdomen)", s: { liverqi: 2 } },
+            { t: "Dull and achy; better with rest, warmth and pressure", s: { qi: 1, blood: 1 } },
+            { t: "Heavy, numb and achy limbs", s: { damp: 2 } },
+            { t: "No recurring pain", s: {} }
+          ] },
+        { kicker: "Head & Senses 头面", text: "Which of these do you experience most?",
+          hint: "",
+          options: [
+            { t: "Dizziness or blurry vision, worse when I stand up", s: { blood: 2 } },
+            { t: "A heavy head, as if wrapped in a wet towel; sinus congestion", s: { damp: 2 } },
+            { t: "Ringing in the ears and dry eyes", s: { yin: 2 } },
+            { t: "None of these", s: {} }
+          ] },
+        { kicker: "Skin & Complexion 面色", text: "What do you notice about your face and skin?",
+          hint: "",
+          options: [
+            { t: "Pale or sallow complexion; pale lips and nail beds", s: { blood: 2 } },
+            { t: "Dark or dull complexion, dark spots or dark under-eye circles", s: { stasis: 2 } },
+            { t: "Oily skin with breakouts or redness", s: { dampheat: 2 } },
+            { t: "Dry skin and hair, brittle nails", s: { blood: 1, yin: 1 } },
+            { t: "Nothing stands out", s: {} }
+          ] },
+        { kicker: "Urination 小便", text: "How is your urination, usually?",
+          hint: "",
+          options: [
+            { t: "Frequent and clear, in large amounts — I'm up at night to urinate", s: { yang: 2 } },
+            { t: "Dark yellow and scanty, with a burning or urgent feeling", s: { dampheat: 2 } },
+            { t: "Frequent and pale, but the stream is weak and slow to start", s: { qi: 1, yang: 1 } },
+            { t: "Normal colour and amount", s: {} }
           ] }
       ];
 
@@ -1426,7 +1600,7 @@
       }
 
       function answersSummaryText() {
-        var lines = ["My full TCM assessment answers — Harmony TCM Wellness (24 questions):"];
+        var lines = ["My full TCM assessment answers — Harmony TCM Wellness (40 questions):"];
         QUESTIONS.forEach(function (q, i) {
           var a = answers[i];
           lines.push((i + 1) + ". " + q.text + " → " + (a === null ? "(not answered)" : q.options[a].t));
@@ -1463,7 +1637,7 @@
             "<p class='pattern-sub'>" + esc(p.tagline) + "</p>" +
             "<div class='match-meter'><div class='lbl'><span>Share of your quick-check score</span><span>" + share + "%</span></div>" +
             "<div class='bar'><div class='fill' id='matchFill'></div></div></div>" +
-            "<p style='margin:16px 0 0; color:var(--ink-soft); font-size:14.5px;'>This is a first-glance indication from five questions only — a simplified snapshot for education, not a diagnosis. Full pattern differentiation also weighs your tongue, pulse and complete history.</p>" +
+            "<p style='margin:16px 0 0; color:var(--ink-soft); font-size:14.5px;'>This is a first-glance indication from ten questions only — a simplified snapshot for education, not a diagnosis. Full pattern differentiation also weighs your tongue, pulse and complete history.</p>" +
           "</div>" +
           "<div class='cols'>" +
             "<div class='panel'><h3>What this pattern means <span class='zh'>病机</span></h3><p>" + esc(p.means) + "</p></div>" +
@@ -1475,7 +1649,7 @@
         html += "" +
         "<div class='cols'>" +
           "<div class='panel full'><h3>Want the full picture? <span class='zh'>完整评估</span></h3>" +
-          "<p>The quick check is a snapshot. The <strong>full assessment</strong> asks 24 questions and lets you add a tongue photo plus imaging and lab reports. Our registered practitioner (30+ years as a Chief Physician at a Grade-A tertiary hospital, versed in both TCM and Western medicine) analyses everything personally: <strong>pattern assessment review $35</strong> · <strong>lab result interpretation $45</strong> — or register as a member: <strong>$99/year</strong> for 4 pattern reviews, <strong>$139/year</strong> for 4 reviews including imaging &amp; lab analysis. Payable by <a href='https://square.link/u/G1DMI5PU?src=sheet' target='_blank' rel='noopener'>bank card through Square</a> or <a href='https://www.paypal.com/qrcodes/p2pqrc/WLDFPG5ZD4QQS' target='_blank' rel='noopener'>PayPal</a>. Your full result is prepared by the expert after payment and sent to you by email — it is not shown on this page.</p>" +
+          "<p>The quick check is a snapshot. The <strong>full assessment</strong> asks 40 questions and lets you add a tongue photo plus imaging and lab reports. Our registered practitioner (30+ years as a Chief Physician at a Grade-A tertiary hospital, versed in both TCM and Western medicine) analyses everything personally: <strong>pattern assessment review $35</strong> · <strong>lab result interpretation $45</strong> — or register as a member: <strong>$99/year</strong> for 4 pattern reviews, <strong>$139/year</strong> for 4 reviews including imaging &amp; lab analysis. Payable by <a href='https://square.link/u/G1DMI5PU?src=sheet' target='_blank' rel='noopener'>bank card through Square</a> or <a href='https://www.paypal.com/qrcodes/p2pqrc/WLDFPG5ZD4QQS' target='_blank' rel='noopener'>PayPal</a>. Your full result is prepared by the expert after payment and sent to you by email — it is not shown on this page.</p>" +
           "<div class='cta-row'>" +
             "<button class='btn btn-primary' id='fullBtn' type='button'>Take the full assessment 完整评估 →</button>" +
             "<a class='btn btn-ghost' id='emailBtn' href='#'>Email the clinic</a>" +
@@ -1492,8 +1666,8 @@
         if (mf) { requestAnimationFrame(function () { mf.style.width = share + "%"; }); }
 
         var quickSummary = balanced
-          ? "Free 5-question TCM quick check — Harmony TCM Wellness\nResult: no clear pattern (broadly balanced). Educational indication only — not a diagnosis."
-          : "Free 5-question TCM quick check — Harmony TCM Wellness\nFirst-glance pattern: " + PATTERNS[topKey].en + " (" + PATTERNS[topKey].zh + "). Educational indication only — not a diagnosis.";
+          ? "Free 10-question TCM quick check — Harmony TCM Wellness\nResult: no clear pattern (broadly balanced). Educational indication only — not a diagnosis."
+          : "Free 10-question TCM quick check — Harmony TCM Wellness\nFirst-glance pattern: " + PATTERNS[topKey].en + " (" + PATTERNS[topKey].zh + "). Educational indication only — not a diagnosis.";
         quickSummary += "\nI'm interested in the full assessment with expert review ($35), or lab result interpretation ($45).";
         var emailBtn = document.getElementById("emailBtn");
         if (emailBtn) emailBtn.setAttribute("href", mailtoHref(quickSummary, false));
