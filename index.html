@@ -382,6 +382,22 @@
       .locs div { display: flex; gap: 10px; }
       .locs .city { font-weight: 700; min-width: 74px; }
 
+      /* ---------- winter wellness ---------- */
+      .winter { margin-top: 56px; }
+      .winter h2 { margin: 0 0 10px; font-size: 21px; background: var(--bar); padding: 10px 14px; border-radius: 3px; }
+      .winter .lead { color: var(--ink-soft); margin: 0 0 18px; }
+      .winter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 0 0 28px; }
+      .winter-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; }
+      .winter-card h3 { margin: 0 0 8px; font-size: 17px; }
+      .winter-card ul { margin: 0; padding-left: 18px; color: var(--ink-soft); }
+      .winter-card li { margin: 0 0 6px; }
+      .winter-faq h3 { margin: 0 0 12px; font-size: 19px; }
+      .winter-faq details { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 16px; margin: 0 0 10px; }
+      .winter-faq summary { cursor: pointer; font-weight: 700; }
+      .winter-faq details p { color: var(--ink-soft); margin: 8px 0 0; }
+      .winter-note { color: var(--ink-faint); font-size: 13.5px; margin: 16px 0 0; }
+      @media (max-width: 720px) { .winter-grid { grid-template-columns: 1fr; } }
+
       footer.page-foot { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 22px; font-size: 13.5px; color: var(--ink-faint); }
       footer.page-foot p { margin: 0 0 8px; }
 
@@ -474,7 +490,7 @@
             <div class="rev-stat">
               <p class="src">Google reviews</p>
               <p class="stars" aria-label="Five-star reviews">★★★★★</p>
-              <p class="big">57 <span>five-star reviews</span></p>
+              <p class="big">58 <span>five-star reviews</span></p>
               <p class="note">Patients who rated their care five stars on Google.</p>
             </div>
             <div class="rev-stat">
@@ -830,6 +846,93 @@
           </p>
           <p style="margin-top:14px; margin-bottom:0;">To book or ask a question, <a href="mailto:acupunctureyouwei@gmail.com"><strong>email the clinic</strong></a></p>
         </div>
+      </section>
+
+      <section class="winter" id="winter">
+        <h2>Winter Wellness, the TCM Way</h2>
+        <p class="lead">In TCM, winter belongs to the Kidney system — a season for storing, resting, and warming from within. These are general habits, not prescriptions: your own pattern decides the details.</p>
+        <div class="winter-grid">
+          <div class="winter-card">
+            <h3>Eat — warm from within</h3>
+            <ul>
+              <li>Favour warm, cooked food: soups, stews, and congee; ginger, cinnamon, lamb, walnuts, black sesame, black beans, and black rice.</li>
+              <li>Go easy on raw and cold food and iced drinks — cold injures Yang, and winter is when Yang most needs protecting.</li>
+              <li>Eat at regular times and avoid heavy late-night meals. If you tend to feel hot, dry, or restless, heavy tonics can backfire — warming should match your constitution.</li>
+            </ul>
+          </div>
+          <div class="winter-card">
+            <h3>Dress — guard the gates</h3>
+            <ul>
+              <li>Keep the head, neck, lower back, and feet warm — in TCM, cold is said to enter through the feet.</li>
+              <li>Dress in layers so you can adjust between indoors and out, and keep the waist and knees covered.</li>
+              <li>Wear warm socks or slippers indoors rather than letting your feet stay cold on the floor.</li>
+            </ul>
+          </div>
+          <div class="winter-card">
+            <h3>Home — store and rest</h3>
+            <ul>
+              <li>Sleep earlier and rise a little later — the classic winter advice is "early to bed, late to rise, waiting for the sunlight."</li>
+              <li>Keep rooms warm but aired: open windows briefly each day, and ease dry air with a humidifier or a bowl of water near the heat.</li>
+              <li>A warm bath or shower before bed helps; avoid getting chilled right after sweating.</li>
+            </ul>
+          </div>
+          <div class="winter-card">
+            <h3>Out &amp; about — move gently</h3>
+            <ul>
+              <li>Exercise after sunrise when you can. Walking, tai chi, and stretching are ideal — move until lightly warm, not drenched in sweat.</li>
+              <li>On cold mornings, warm up indoors first and protect your head and neck outside.</li>
+              <li>Watch your footing on ice — falls are the classic winter injury. Wear steady shoes and take short steps.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="winter-faq">
+          <h3>Common TCM &amp; acupuncture questions</h3>
+          <details>
+            <summary>Does acupuncture hurt?</summary>
+            <p>Most people feel little or nothing — the needles are very fine. You may notice a dull ache, heaviness, or tingling, which practitioners call deqi. If you are nervous, say so; treatment can start very gently.</p>
+          </details>
+          <details>
+            <summary>Is acupuncture safe?</summary>
+            <p>When performed by a registered practitioner using sterile, single-use needles, serious side effects are rare. Minor bruising or soreness can happen. Tell the practitioner if you are pregnant, take blood thinners, or have a bleeding disorder — some points and techniques are adjusted or avoided.</p>
+          </details>
+          <details>
+            <summary>What is pattern differentiation?</summary>
+            <p>Instead of treating one symptom alone, TCM looks at the whole picture — sleep, digestion, mood, tongue, and pulse — to identify the underlying pattern, such as Qi Deficiency or Damp-Heat. That is why this site's assessment asks about more than your main complaint.</p>
+          </details>
+          <details>
+            <summary>What do people commonly seek acupuncture for?</summary>
+            <p>Pain (back, neck, joints), headaches, stress and sleep problems, digestive complaints, and women's reproductive health — including fertility support, painful periods, and breech presentation, where moxibustion is traditionally used in late pregnancy to encourage the baby to turn — are common reasons people seek acupuncture. Acupuncture does not replace medical care — serious or worsening symptoms should be checked by a physician.</p>
+          </details>
+          <details>
+            <summary>How many sessions will I need?</summary>
+            <p>It depends on the problem. Recent issues may improve in a few visits; long-standing ones usually take longer. The practitioner reassesses as you go rather than fixing a number in advance.</p>
+          </details>
+          <details>
+            <summary>How often should I come?</summary>
+            <p>Generally once a week, with a reassessment after 5 to 8 weeks. The exact frequency depends on your individual condition — the practitioner adjusts the plan based on how you respond.</p>
+          </details>
+          <details>
+            <summary>What happens at a first visit?</summary>
+            <p>A conversation about your health history, plus pulse and tongue diagnosis, then treatment. Bring a list of medications and any recent lab or imaging reports if you have them.</p>
+          </details>
+          <details>
+            <summary>What should I do after treatment?</summary>
+            <p>Rest a little, drink water, and avoid heavy exertion, alcohol, and getting chilled right after. Mild tiredness or soreness can happen and usually passes quickly.</p>
+          </details>
+          <details>
+            <summary>What about cupping and moxibustion?</summary>
+            <p>Cupping uses suction cups and can leave temporary round marks that fade within days. Moxibustion warms points with mugwort. The practitioner decides whether either suits your pattern.</p>
+          </details>
+          <details>
+            <summary>Does insurance cover acupuncture?</summary>
+            <p>Many extended health plans cover it, and the clinic offers direct billing. Check your own plan's coverage and limits.</p>
+          </details>
+          <details>
+            <summary>Do I have to choose between TCM and Western medicine?</summary>
+            <p>No. Many patients use both. Tell each provider what the other is doing, especially about herbs and medications, so nothing interacts.</p>
+          </details>
+        </div>
+        <p class="winter-note">General education only — not a diagnosis and not a substitute for medical advice. If you have a specific condition, <a href="#book">book an assessment</a> and discuss it with the practitioner.</p>
       </section>
 
       <footer class="page-foot">
