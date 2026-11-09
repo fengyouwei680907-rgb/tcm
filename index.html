@@ -1831,6 +1831,9 @@
       function listItems(arr) {
         return arr.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("");
       }
+      function pointItems(arr) {
+        return arr.map(function (pt) { return "<li><strong>" + esc(pt[0]) + "</strong> — " + esc(pt[1]) + "</li>"; }).join("");
+      }
 
       function redFlagsHtml() {
         return "" +
@@ -1893,6 +1896,12 @@
             "<p class='result-kicker'>Free quick check · 免費快速自測結果</p>" +
             "<h2 class='pattern-name'>No clear pattern <span class='zh'>陰陽平和</span></h2>" +
             "<p class='pattern-sub'>Your ten answers didn't cluster around any single classical pattern — your health may be broadly balanced right now, or your main concern may need the fuller picture that only the complete assessment and a personal review can give.</p>" +
+          "</div>" +
+          "<h3 style='margin:26px 0 4px; font-size:21px;'>General self-care <span class='zh'>一般調養</span></h3>" +
+          "<p style='margin:0 0 4px; color:var(--ink-soft); font-size:14.5px;'>No single pattern stood out, so here is general knowledge for staying balanced — not a personal prescription.</p>" +
+          "<div class='cols'>" +
+            "<div class='panel'><h3>Daily habits <span class='zh'>日常調護</span></h3><ul><li>Sleep before 11 pm — night is when the body restores itself.</li><li>Eat warm, cooked, regular meals; avoid skipping breakfast and late heavy suppers.</li><li>Move daily — brisk walking, stretching, tai chi or qigong.</li><li>Slow down in the evening and keep stress from building up.</li></ul></div>" +
+            "<div class='panel'><h3>Foods <span class='zh'>飲食宜忌</span></h3><p><strong>To favour 宜食</strong></p><ul><li>Cooked grains, seasonal vegetables and warm soups</li><li>Moderate protein: eggs, fish, chicken, beans</li></ul><p style='margin-top:10px;'><strong>To avoid 忌食</strong></p><ul><li>Iced drinks and large amounts of raw, cold food</li><li>Excess sugar, alcohol and very greasy food</li></ul></div>" +
           "</div>";
         } else {
           var p = PATTERNS[topKey];
@@ -1909,7 +1918,13 @@
           "<div class='cols'>" +
             "<div class='panel'><h3>What this pattern means <span class='zh'>病機</span></h3><p>" + esc(p.means) + "</p></div>" +
             "<div class='panel'><h3>Typical signs <span class='zh'>常見表現</span></h3><ul>" + listItems(p.signs.slice(0, 4)) + "</ul></div>" +
-            "<div class='panel full'><h3>First self-care steps <span class='zh'>調護建議</span></h3><ul>" + listItems(p.lifestyle.slice(0, 3)) + "</ul><p style='margin-top:10px; font-size:14.5px;'>Foods to favour and avoid, acupressure points and any formula guidance matched to your full picture are part of the expert review below.</p></div>" +
+          "</div>" +
+          "<h3 style='margin:26px 0 4px; font-size:21px;'>General self-care for this pattern <span class='zh'>一般調養</span></h3>" +
+          "<p style='margin:0 0 4px; color:var(--ink-soft); font-size:14.5px;'>General knowledge for this pattern — not a personal prescription. Your full picture (tongue, pulse and complete history) may change what suits you best. Formula guidance matched to you personally is part of the expert review below.</p>" +
+          "<div class='cols'>" +
+            "<div class='panel'><h3>Daily habits <span class='zh'>日常調護</span></h3><ul>" + listItems(p.lifestyle) + "</ul></div>" +
+            "<div class='panel'><h3>Foods <span class='zh'>飲食宜忌</span></h3><p><strong>To favour 宜食</strong></p><ul>" + listItems(p.foodsYes) + "</ul><p style='margin-top:10px;'><strong>To avoid 忌食</strong></p><ul>" + listItems(p.foodsNo) + "</ul></div>" +
+            "<div class='panel full'><h3>Acupressure points <span class='zh'>穴位按壓</span></h3><ul>" + pointItems(p.points) + "</ul><p style='margin-top:10px; font-size:14px; color:var(--ink-soft);'>Press gently for the time shown and stop if it hurts. Avoid strong stimulation of Hegu (LI4) and Sanyinjiao (SP6) during pregnancy. If you take blood-thinning medication or have a serious condition, ask your practitioner first.</p></div>" +
           "</div>";
         }
 
