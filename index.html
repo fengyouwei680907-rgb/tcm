@@ -72,17 +72,29 @@
       .topnav .nav-menu a:hover { color: var(--blue); }
       .topnav .links { margin-left: 16px; }
       .nav-toggle { display: none; }
-      .menu-lang { display: none; }
+      .lang-toggle .lang-short { display: none; }
+      .topnav .nav-menu .menu-book { display: none; }
       @media (max-width: 940px) {
         .topnav { gap: 10px; }
         .topnav .brand { font-size: 15px; }
-        .topnav .links .lang-toggle { display: none; }
+        .topnav .links { margin-left: auto; }
+        .topnav .links .lang-toggle { display: inline-flex; padding: 5px 10px; font-size: 13px; }
+        .topnav .links .lang-toggle .lang-full { display: none; }
+        .topnav .links .lang-toggle .lang-short { display: inline; }
         .topnav .nav-menu { display: none; position: absolute; top: 100%; right: 8px; flex-direction: column; align-items: stretch; gap: 0; min-width: 230px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 12px 28px rgba(58, 45, 35, 0.20); padding: 8px; margin-left: 0; z-index: 60; }
         .topnav.open .nav-menu { display: flex; }
         .topnav .nav-menu a { display: block; padding: 12px 14px; font-size: 15px; }
         .topnav .nav-menu a + a { border-top: 1px solid var(--line); }
-        .topnav .nav-menu .menu-lang { display: block; width: 100%; text-align: left; padding: 12px 14px; font: inherit; font-size: 15px; font-weight: 600; color: var(--blue); background: transparent; border: none; border-top: 1px solid var(--line); cursor: pointer; }
         .nav-toggle { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; flex: none; font-size: 22px; line-height: 1; color: var(--ink); background: transparent; border: 1.5px solid var(--line-strong); border-radius: 10px; cursor: pointer; }
+      }
+      @media (max-width: 720px) {
+        .topnav .links .btn { display: none; }
+        .topnav .nav-menu .menu-book { display: block; color: var(--blue); }
+      }
+      @media (max-width: 480px) {
+        .topnav { gap: 8px; }
+        .topnav .brand { font-size: 14px; }
+        .topnav .links .lang-toggle { padding: 5px 8px; }
       }
 
       /* ---------- category cards ---------- */
@@ -586,16 +598,16 @@
       <nav class="topnav" aria-label="Main navigation" data-i18n-aria="r1">
         <a class="brand" href="#intro" data-i18n="t4"><span class="dot"></span>Harmony TCM Wellness</a>
         <div class="nav-menu" id="navMenu">
+          <a class="menu-book" href="https://youweifeng.clinicsense.com/" target="_blank" rel="noopener" data-i18n="t10">Book Now</a>
           <a href="#services" data-i18n="t5">Services</a>
           <a href="#reviews" data-i18n="t6">Reviews</a>
           <a href="#stories" data-i18n="t7">Stories</a>
           <a href="#faq" data-i18n="t8">FAQ</a>
           <a href="#book" data-i18n="t9">Book in person</a>
-          <button class="menu-lang" id="langToggleMenu" type="button">繁體中文</button>
         </div>
         <div class="links">
           <a class="btn btn-primary" href="https://youweifeng.clinicsense.com/" target="_blank" rel="noopener" data-i18n="t10">Book Now</a>
-          <button class="lang-toggle" id="langToggle" type="button">繁體中文</button>
+          <button class="lang-toggle" id="langToggle" type="button"><span class="lang-full" id="langToggleFull">繁體中文</span><span class="lang-short" id="langToggleShort">繁體</span></button>
         </div>
         <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" data-i18n-aria="u25">&#9776;</button>
       </nav>
@@ -1243,8 +1255,10 @@
             var kr = arias[n].getAttribute('data-i18n-aria');
             arias[n].setAttribute('aria-label', isZh ? (I18N_ZH[kr] || origAria[kr]) : origAria[kr]);
           }
-          var btn = document.getElementById('langToggle');
-          if (btn) btn.textContent = isZh ? 'English' : '繁體中文';
+          var langFull = document.getElementById('langToggleFull');
+          var langShort = document.getElementById('langToggleShort');
+          if (langFull) langFull.textContent = isZh ? 'English' : '繁體中文';
+          if (langShort) langShort.textContent = isZh ? 'EN' : '繁體';
           try { localStorage.setItem(KEY, lang); } catch (e) {}
           if (typeof window.__harmonyRerenderQuiz === "function") { try { window.__harmonyRerenderQuiz(); } catch (e2) {} }
         }
@@ -1263,15 +1277,6 @@
       (function () {
         var topnav = document.querySelector(".topnav");
         var navToggle = document.getElementById("navToggle");
-        var langToggle = document.getElementById("langToggle");
-        var langMenu = document.getElementById("langToggleMenu");
-        if (langToggle && langMenu) {
-          langMenu.textContent = langToggle.textContent;
-          langMenu.addEventListener("click", function () {
-            langToggle.click();
-            langMenu.textContent = langToggle.textContent;
-          });
-        }
         if (!navToggle || !topnav) return;
         function closeMenu() { topnav.classList.remove("open"); navToggle.setAttribute("aria-expanded", "false"); }
         navToggle.addEventListener("click", function (ev) {
