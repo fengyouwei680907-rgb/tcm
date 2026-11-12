@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tcm-pattern-self-assessment.vercel.app/sitemap.xml
-#updated
+Sitemap: https://www.harmonytcmwellness.com/sitemap.xml
