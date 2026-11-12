@@ -684,6 +684,8 @@
           </div>
         </div>
 
+      </section>
+
         <section class="reviews" id="reviews" aria-label="Patient reviews" data-i18n-aria="r4">
           <h2 data-i18n="t34">What patients say <span class="zh">患者評價</span></h2>
           <p class="rev-sub" data-i18n="t35">Ratings and reviews from our patients across both clinics, combined.</p>
@@ -955,7 +957,6 @@
             speak with your physician or a registered practitioner first.
           </p>
         </div>
-      </section>
 
       <!-- ================= QUIZ ================= -->
       <section id="quiz" aria-live="polite">
@@ -1282,7 +1283,26 @@
           navToggle.setAttribute("aria-expanded", open ? "true" : "false");
         });
         topnav.addEventListener("click", function (ev) {
-          if (ev.target.closest("a")) closeMenu();
+          var a = ev.target.closest("a");
+          if (!a) return;
+          closeMenu();
+          var href = a.getAttribute("href") || "";
+          if (href.charAt(0) !== "#") return;
+          var target = document.getElementById(href.slice(1));
+          if (!target) return;
+          var q = document.getElementById("quiz");
+          var r = document.getElementById("result");
+          var u = document.getElementById("uploads");
+          var intro = document.getElementById("intro");
+          var inQuiz = (q && q.classList.contains("on")) || (r && r.classList.contains("on")) || (u && u.classList.contains("on"));
+          if (inQuiz) {
+            ev.preventDefault();
+            if (q) q.classList.remove("on");
+            if (r) r.classList.remove("on");
+            if (u) u.classList.remove("on");
+            if (intro) intro.style.display = "";
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
         });
         document.addEventListener("click", function () { closeMenu(); });
       })();
