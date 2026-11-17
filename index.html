@@ -100,6 +100,8 @@
         .topnav { gap: 8px; }
         .topnav .brand { font-size: 14px; }
         .topnav .brand .brand-seal { width: 32px; height: 32px; }
+        /* 小屏顶栏只留圆章，品牌名隐藏，否则两个语言按钮会被挤出页面 */
+        .topnav .brand [data-i18n="t4"] { display: none; }
         .hero-seal { width: 84px; height: 84px; }
         html[lang="zh-Hant"] .topnav .brand [data-i18n="t4"] { font-size: 20px; }
         .topnav .links .lang-toggle { padding: 5px 8px; }
@@ -2980,7 +2982,7 @@
         regEmail: "請填寫有效的電郵地址——註冊確認與分析結果會寄到那裡。",
         regPhone: "請填寫電話號碼，診所需要時可以聯絡您。",
         regDone: "您的電郵程式應該會打開，註冊內容已填好——按發送即可。診所會用電郵確認您的註冊（及會員，如有選擇）。",
-        apptName: "請填寫姓名，方便診所知道預約是為誰安排的。",
+        apptName: "請填寫姓名，方便診所知道預��是為誰安排的。",
         apptEmail: "請填寫有效的電郵地址——診所會用電郵確認您的預約時間。",
         apptPhone: "請填寫電話號碼，方便診所聯絡您確認預約。",
         apptClinic: "請選擇診所，方便診所知道您想約哪一家。",
