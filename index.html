@@ -60,19 +60,20 @@
       }
 
       /* ---------- top nav ---------- */
-      .topnav { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 10px; background: var(--surface); border: none; border-radius: 0; padding: 18px 4px 10px; margin: 0; }
-      .topnav .brand { font-family: Georgia, "Times New Roman", serif; font-weight: 700; font-size: 17px; color: var(--ink); text-decoration: none; white-space: nowrap; display: flex; align-items: center; gap: 8px; }
+      /* 英文模式顶栏实测 891px，比卡片内容区 816px 宽约 75px，阿语按钮会被顶出卡外；已收紧：导航词 Book in person→Visit us、字号 14.5→14、间距收紧，留约 25px 余量。圆章 56px 不动，中文模式不受影响。 */
+      .topnav { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 8px; background: var(--surface); border: none; border-radius: 0; padding: 18px 4px 10px; margin: 0; }
+      .topnav .brand { font-family: Georgia, "Times New Roman", serif; font-weight: 700; font-size: 16px; color: var(--ink); text-decoration: none; white-space: nowrap; display: flex; align-items: center; gap: 8px; }
       .topnav .brand .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--blue); display: inline-block; flex: none; }
       .topnav .brand .brand-seal { width: 56px; height: 56px; flex: none; }
       html[lang="zh-Hant"] .topnav .brand [data-i18n="t4"] { font-size: 24px; }
       .topnav .links { display: flex; gap: 12px; margin-left: auto; align-items: center; }
-      .topnav .links a { color: var(--ink-soft); text-decoration: none; font-size: 14.5px; font-weight: 600; white-space: nowrap; }
+      .topnav .links a { color: var(--ink-soft); text-decoration: none; font-size: 14px; font-weight: 600; white-space: nowrap; }
       .topnav .links a:hover { color: var(--blue); }
-      .topnav .btn { padding: 8px 16px; font-size: 14.5px; }
-      .topnav .nav-menu { display: flex; gap: 8px; margin-left: auto; align-items: center; }
-      .topnav .nav-menu a { color: var(--ink-soft); text-decoration: none; font-size: 14.5px; font-weight: 600; white-space: nowrap; }
+      .topnav .btn { padding: 8px 12px; font-size: 14px; }
+      .topnav .nav-menu { display: flex; gap: 6px; margin-left: auto; align-items: center; }
+      .topnav .nav-menu a { color: var(--ink-soft); text-decoration: none; font-size: 14px; font-weight: 600; white-space: nowrap; }
       .topnav .nav-menu a:hover { color: var(--blue); }
-      .topnav .links { margin-left: 16px; }
+      .topnav .links { margin-left: 8px; }
       .nav-toggle { display: none; }
       .lang-toggle .lang-short { display: none; }
       .topnav .nav-menu .menu-book { display: none; }
@@ -503,7 +504,7 @@
         table.herbs td.dose { white-space: normal; }
       }
       /* ---------- language toggle ---------- */
-      .lang-toggle { font: inherit; font-size: 14px; font-weight: 600; color: var(--blue); background: transparent; border: 1.5px solid var(--blue); border-radius: 999px; padding: 6px 12px; cursor: pointer; white-space: nowrap; }
+      .lang-toggle { font: inherit; font-size: 14px; font-weight: 600; color: var(--blue); background: transparent; border: 1.5px solid var(--blue); border-radius: 999px; padding: 6px 10px; cursor: pointer; white-space: nowrap; }
       .lang-toggle:hover { background: var(--blue); color: #fff; }
       .topnav .links a.lang-toggle { color: var(--blue); text-decoration: none; }
       html[lang="zh-Hant"] [data-i18n] .zh { display: none; }
@@ -660,7 +661,7 @@
           <a href="#reviews" data-i18n="t6">Reviews</a>
           <a href="#stories" data-i18n="t7">Stories</a>
           <a href="#faq" data-i18n="t8">FAQ</a>
-          <a href="#book" data-i18n="t9">Book in person</a>
+          <a href="#book" data-i18n="t9">Visit us</a>
         </div>
         <div class="links">
           <a class="btn btn-primary" href="https://youweifeng.clinicsense.com/" target="_blank" rel="noopener" data-i18n="t10">Book Now</a>
@@ -2980,9 +2981,9 @@
       var FORM_MSG_ZH = {
         regNick: "請填寫暱稱，方便我們稱呼您。",
         regEmail: "請填寫有效的電郵地址——註冊確認與分析結果會寄到那裡。",
-        regPhone: "請填寫電話號碼，診所需要時可以聯絡您。",
+        regPhone: "請填寫電話號碼，診所需���時可以聯絡您。",
         regDone: "您的電郵程式應該會打開，註冊內容已填好——按發送即可。診所會用電郵確認您的註冊（及會員，如有選擇）。",
-        apptName: "請填寫姓名，方便診所知道預��是為誰安排的。",
+        apptName: "請填寫姓名，方便診所知道預約是為誰安排的。",
         apptEmail: "請填寫有效的電郵地址——診所會用電郵確認您的預約時間。",
         apptPhone: "請填寫電話號碼，方便診所聯絡您確認預約。",
         apptClinic: "請選擇診所，方便診所知道您想約哪一家。",
