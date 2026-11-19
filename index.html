@@ -62,6 +62,10 @@
       /* ---------- top nav ---------- */
       /* 英文模式顶栏实测 891px，比卡片内容区 816px 宽约 75px，阿语按钮会被顶出卡外；已收紧：导航词 Book in person→Visit us、字号 14.5→14、间距收紧，留约 25px 余量。圆章 56px 不动，中文模式不受影响。 */
       .topnav { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 8px; background: var(--surface); border: none; border-radius: 0; padding: 18px 4px 10px; margin: 0; }
+      .nav-sticky { position: sticky; top: 0; z-index: 50; background: var(--surface); }
+      .subnav { display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: center; padding: 8px 4px 10px; border-top: 1px solid var(--line); }
+      .subnav a { color: var(--ink-soft); text-decoration: none; font-size: 13px; font-weight: 600; white-space: nowrap; }
+      .subnav a:hover { color: var(--blue); }
       .topnav .brand { font-family: Georgia, "Times New Roman", serif; font-weight: 700; font-size: 16px; color: var(--ink); text-decoration: none; white-space: nowrap; display: flex; align-items: center; gap: 8px; }
       .topnav .brand .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--blue); display: inline-block; flex: none; }
       .topnav .brand .brand-seal { width: 56px; height: 56px; flex: none; }
@@ -659,6 +663,7 @@
     </div>
 
     <div class="wrap">
+      <div class="nav-sticky">
       <nav class="topnav" aria-label="Main navigation" data-i18n-aria="r1">
         <a class="brand" href="#intro"><svg class="brand-seal" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="40 50 400 400" width="56" height="56" aria-hidden="true">
   <!-- 和睦堂 · 圆章版 · 大篆 -->
@@ -695,6 +700,19 @@
         </div>
         <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" data-i18n-aria="u25">&#9776;</button>
       </nav>
+      <nav class="subnav" aria-label="Section navigation">
+        <a href="#intro">自我評估 Self-check</a>
+        <a href="#forecast">五運六氣 Forecast</a>
+        <a href="#practitioner">醫師 Practitioner</a>
+        <a href="#clinics">診所 Clinics</a>
+        <a href="#reviews">評價 Reviews</a>
+        <a href="#stories">患者故事 Stories</a>
+        <a href="#services">服務套餐 Services</a>
+        <a href="#book">預約 Book</a>
+        <a href="#winter">冬季養生 Winter</a>
+        <a href="#faq">常見問題 FAQ</a>
+      </nav>
+      </div>
       <!-- ================= INTRO ================= -->
       <section id="intro">
         <div class="hero-banner">
@@ -726,6 +744,7 @@
               <a class="btn btn-ghost" href="#register" data-i18n="t16">Register · Membership 註冊會員</a>
               <a class="btn btn-ghost" href="#book" data-i18n="t17">Book in person 預約線下 · First visit 10% off</a>
               <a class="btn btn-ghost" href="https://youweifeng.clinicsense.com/" target="_blank" rel="noopener" data-i18n="t18">Book online 網上預約 →</a>
+              <a class="btn btn-ghost" href="#birthBlock">五運六氣自我評測 · My 2027 by birth date</a>
               <span class="cta-note" data-i18n="t19">Quick check result appears on this page · Full assessment: 40 questions, about 8 minutes, answers and files stay in this browser only</span>
             </div>
           </div>
@@ -850,7 +869,7 @@
             <p class="winter-note" data-i18n="t366">This forecast is a deduction from classical TCM Five Movements and Six Qi theory. It is general education, not a modern medical prediction or diagnosis, and it does not replace professional medical advice. For actual weather and disaster information, follow official forecasts and warnings. If you have symptoms or a health concern, please book an assessment with a registered practitioner.</p>
           </div>
         </details>
-        <div class="birth-block">
+        <div class="birth-block" id="birthBlock">
           <h3 data-i18n="t372">My 2027 · By birth date</h3>
           <p class="lead" data-i18n="t373">Enter your birth date to see what 2027's Qi means for you. Your birth date is calculated in your browser only — it is never uploaded or saved.</p>
           <div class="forecast-picker">
@@ -879,7 +898,7 @@
       </section>
 
       <!-- ================= PRACTITIONER ================= -->
-      <section class="practitioner">
+      <section class="practitioner" id="practitioner">
         <div class="card">
           <h2 data-i18n="t159">About your practitioner</h2>
           <p class="creds" data-i18n="t160">Youwei Feng — Registered Traditional Chinese Medicine Practitioner &amp; Registered Acupuncturist, Ontario, Canada</p>
